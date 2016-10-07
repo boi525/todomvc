@@ -1,19 +1,23 @@
 (function (angular) {
-	'use strict';
+	'use strict'; // 严格模式
 
-	var app = angular.module('app', ['ngRoute']);
-		app.config(['$routeProvider', function($routeProvider) {
-			$routeProvider.when('/', {
-				templateUrl: 'tmpls/tmpl.html',
-				controller: 'todoController'
-			}).when('/active', {
-				templateUrl: 'tmpls/tmpl.html',
-				controller: 'todoController'
-			}).when('/completed', {
-				templateUrl: 'tmpls/tmpl.html',
-				controller: 'todoController'
-			}).otherwise({
-				redirectTo: '/'
-			});
+	// Your starting point. Enjoy the ride!
+	var todoMvc = angular.module("todoMvcApp", ['ngRoute']);
+	
+
+	todoMvc.config(['$routeProvider', function($routeProvider) {
+		$routeProvider.when('/', {
+			templateUrl: 'tmpls/tmpl.html',
+			controller: 'todoController'
+		}).when('/active', {
+			templateUrl: 'tmpls/tmpl.html',
+			controller: 'todoController'
+		}).when('/completed', {
+			templateUrl: 'tmpls/tmpl.html',
+			controller: 'todoController'
+		}).otherwise({
+			redirectTo: '/'
+		});
 	}]);
+
 })(angular);
